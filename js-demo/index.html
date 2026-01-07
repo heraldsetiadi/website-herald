@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Herald yuk Demo JavaScript Lokal</title>
+  <meta charset="UTF-8">
+  <title>Data Repair</title>
 </head>
 <body>
 
-    <h2>Form Input Nama</h2>
+<h2>Data Repair (JSON)</h2>
 
-    <input type="text" id="nama" placeholder="Masukkan nama">
-    <button onclick="tampilNama()">Kirim</button>
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>No Repair</th>
+      <th>Customer</th>
+      <th>Status</th>
+      <th>Tanggal</th>
+    </tr>
+  </thead>
+  <tbody id="data-repair"></tbody>
+</table>
 
-    <p id="hasil"></p>
+<script>
+fetch("repair.json")
+  .then(response => response.json())
+  .then(data => {
+    const tbody = document.getElementById("data-repair");
 
-    <script src="script.js"></script>
+    data.forEach(item => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${item.no_repair}</td>
+        <td>${item.customer}</td>
+        <td>${item.status}</td>
+        <td>${item.tanggal}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })
+  .catch(error => {
+    console.error("Gagal baca JSON:", error);
+  });
+</script>
+
 </body>
 </html>

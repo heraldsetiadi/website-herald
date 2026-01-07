@@ -1,0 +1,20 @@
+[
+  {
+    "no_repair": "RPR-001",
+    "customer": "PT Maju Jaya",
+    "status": "done",
+    "tanggal": "2026-01-01"
+  },
+  {
+    "no_repair": "RPR-002",
+    "customer": "CV Sukses Abadi",
+    "status": "progress",
+    "tanggal": "2026-01-03"
+  },
+  {
+    "no_repair": "RPR-003",
+    "customer": "Budi Santoso",
+    "status": "draft",
+    "tanggal": "2026-01-05"
+  }
+]
